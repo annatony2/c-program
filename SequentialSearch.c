@@ -15,6 +15,9 @@ int main()
    if (search==num[i]){
    printf("\nPosition of %d :%d",num[i],i+1);
    }
+   else{
+     printf("\nNot found !")
+   } 
   }
   return 0;
   }
