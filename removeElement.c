@@ -17,10 +17,10 @@ int main(){
     for(int i=0;i<n;i++){
         scanf("%d",&array[i]);
     }
-    printf("Enter the element to remove: ");
+    printf("Enter the element to remove : ");
     scanf("%d", &elementToRemove);
     removeElement(array,&n,elementToRemove);
-    printf("Final array after removing %d: ",elementToRemove);
+    printf("Final array after removing %d : ",elementToRemove);
     for(int i=0;i<n;i++){
         printf("%d ",array[i]);
     }
