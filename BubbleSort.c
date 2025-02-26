@@ -5,12 +5,12 @@ int main()
   printf("Enter the number of elements :");
   scanf("%d",&limit);
   int num[limit];
+  printf("Enter the elements :");
   for(i=0;i<limit;i++){
-   printf("Enter the element :");
    scanf("%d",&num[i]);
    }
   for(i=0;i<limit-1;i++){
-   for(j=0;j<limit-i;j++){
+   for(j=0;j<limit-i-1;j++){
     if (num[j]>num[j+1]){
      t=num[j];
      num[j]=num[j+1];
@@ -18,9 +18,9 @@ int main()
      }
     }
   }
-  printf("Sorted array is : ");
+  printf("Sorted array : ");
   for(i=0;i<limit;i++){
-   printf("%d\t",num[i]);
+   printf("%d ",num[i]);
    }
   return 0;
   }
