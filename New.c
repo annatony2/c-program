@@ -1,24 +1,25 @@
-//author Anna Tony
-#include<stdio.h>
+/*Author       : Anna Tony
+  Date         : 26-03-2025
+  Description  : 
+  Version      : 1.0  */
+#include <stdio.h>
+
+#define SWAP(a, b) { int temp=a;a=b;b=temp; }
+
 int main(){
-  char inputString[200];
-  int freq[26]={0};
-  printf("Enter the string :");
-  fgets(inputString,sizeof(inputString),stdin);
-  for(int i=0;inputString[i]!='\0';i++){
-    char ch;
-    if(inputString[i]>='A'&& inputString[i]<='Z'){
-      ch=ch+32;//convert upper case to lower case 
-    }
-    if (ch>='a'&& ch<='z'){
-      freq[ch-97]++;
-    }
-  }
-  for(int i=0;i<26;i++){
-    if(freq[i]!=0){
-      printf("%c:%d\n",i+97,freq[i]);
-    }
-  }
-  return 0;
-  }
-    
+    int x, y;
+    printf("Enter two integers : ");
+    printf("x = ");
+    scanf("%d", &x);
+    printf("y = ");
+    scanf("%d", &y);
+    printf("\nBefore swapping:\n");
+    printf("x = %d, y = %d\n", x, y);
+
+    SWAP(x, y);
+
+    printf("\nAfter swapping:\n");
+    printf("x = %d, y = %d\n", x, y);
+
+    return 0;
+}
