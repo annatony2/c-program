@@ -26,27 +26,35 @@ int main(){
 
 #include <stdio.h>
 
-// Defining macros for constants
-#define PI 3.14159
-#define AREA_CIRCLE(r) (PI * (r) * (r))
-#define AREA_CYLINDER(r, h) (2 * PI * (r) * ((r) + (h)))
+// Function to calculate sum of array elements
+int sumArray(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
 
 int main() {
-    double radius, height;
+    int n;
+    
+    // Input: Number of elements
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
 
-    // Input radius and height
-    printf("Enter the radius of the circle and cylinder: ");
-    scanf("%lf", &radius);
-    printf("Enter the height of the cylinder: ");
-    scanf("%lf", &height);
+    int arr[n];
 
-    // Calculate areas using macros
-    double circle_area = AREA_CIRCLE(radius);
-    double cylinder_area = AREA_CYLINDER(radius, height);
+    // Input: Array elements
+    printf("Enter %d elements: ", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
 
-    // Display results
-    printf("Area of the circle: %.2lf\n", circle_area);
-    printf("Surface area of the cylinder: %.2lf\n", cylinder_area);
+    // Function call to calculate sum
+    int sum = sumArray(arr, n);
+
+    // Output: Display sum
+    printf("Sum of array elements: %d\n", sum);
 
     return 0;
 }
