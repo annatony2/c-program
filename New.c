@@ -26,35 +26,27 @@ int main(){
 
 #include <stdio.h>
 
-// Function to calculate sum of array elements
-int sumArray(int arr[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += arr[i];
-    }
-    return sum;
+// Define a structure to store student details struct Student { char name[50]; int rollNo; float cgpa; };
+
+int main() { struct Student s;
+
+// Input student details
+printf("Enter student name: ");
+scanf("%49s", s.name);  // Limiting input to prevent buffer overflow
+
+printf("Enter roll number: ");
+scanf("%d", &s.rollNo);
+
+printf("Enter CGPA: ");
+scanf("%f", &s.cgpa);
+
+// Display student details
+printf("\nStudent Details:\n");
+printf("Name: %s\n", s.name);
+printf("Roll No: %d\n", s.rollNo);
+printf("CGPA: %.2f\n", s.cgpa);
+
+return 0;
+
 }
 
-int main() {
-    int n;
-    
-    // Input: Number of elements
-    printf("Enter the number of elements in the array: ");
-    scanf("%d", &n);
-
-    int arr[n];
-
-    // Input: Array elements
-    printf("Enter %d elements: ", n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-
-    // Function call to calculate sum
-    int sum = sumArray(arr, n);
-
-    // Output: Display sum
-    printf("Sum of array elements: %d\n", sum);
-
-    return 0;
-}
