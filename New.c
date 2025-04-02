@@ -25,21 +25,42 @@ int main(){
 }
 
 #include <stdio.h>
-int main() { struct Student s;
-printf("Enter student name: ");
-scanf("%s", s.name);  
-printf("Enter roll number: ");
-scanf("%d", &s.rollNo);
-printf("Enter CGPA: ");
-scanf("%f", &s.cgpa);
+struct Student {
+    char name[50];
+    int rollNo;
+    float marks[3],
+    float total;
+    float average;
+};
 
-// Display student details
-printf("\nStudent Details:\n");
-printf("Name: %s\n", s.name);
-printf("Roll No: %d\n", s.rollNo);
-printf("CGPA: %.2f\n", s.cgpa);
+int main() {
+    int n, i, j;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
 
-return 0;
+    struct Student s[n];
+    for (i = 0; i < n; i++) {
+        printf("\nEnter details for Student %d\n", i + 1);
+        printf("Enter name: ");
+        scanf("%s", s[i].name);
+        printf("Enter roll number: ");
+        scanf("%d", &s[i].rollNo);
+        s[i].total = 0;
+        for (j = 0; j < 3; j++) {
+            printf("Enter marks for subject %d: ", j + 1);
+            scanf("%f", &s[i].marks[j]);
+            s[i].total += s[i].marks[j];
+        }
+        s[i].average = s[i].total / 3.0;
+    }
+    printf("\nStudent Details:\n");
+    for (i = 0; i < n; i++) {
+        printf("\nStudent %d\n", i + 1);
+        printf("Name: %s\n", s[i].name);
+        printf("Roll No: %d\n", s[i].rollNo);
+        printf("Total Marks: %.2f\n", s[i].total);
+        printf("Average Marks: %.2f\n", s[i].average);
+    }
 
+    return 0;
 }
-
