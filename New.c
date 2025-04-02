@@ -25,18 +25,11 @@ int main(){
 }
 
 #include <stdio.h>
-
-// Define a structure to store student details struct Student { char name[50]; int rollNo; float cgpa; };
-
 int main() { struct Student s;
-
-// Input student details
 printf("Enter student name: ");
-scanf("%49s", s.name);  // Limiting input to prevent buffer overflow
-
+scanf("%s", s.name);  
 printf("Enter roll number: ");
 scanf("%d", &s.rollNo);
-
 printf("Enter CGPA: ");
 scanf("%f", &s.cgpa);
 
